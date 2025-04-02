@@ -20,7 +20,7 @@ def edit_contrast(img, k=0.04):
 
 def edit_contrast_greyscale(img, k=0.04):
     image = np.copy(img) 
-    print(image)
+    #print(image)
     for x in range(len(image)):
         for y in range(len(image[0])):
                 image[x][y] = 255 / (1 + np.e ** (-k * (image[x][y]-122)))
