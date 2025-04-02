@@ -12,7 +12,7 @@ debug = False
 
 def edit_contrast_greyscale(img, k=0.04):
     image = np.copy(img) 
-    for x in range(len(image)):
+p    for x in range(len(image)):
         for y in range(len(image[0])):
                 image[x][y] = 255 / (1 + np.e ** (-k * (image[x][y]-122)))
     return image
@@ -280,7 +280,7 @@ def split_image(path, imgpath, imgid, scalefactor, rows, columns, rotation, circ
             if nocap:
                 crop_img = img[y1:y2, x1:x2] # NOTE: This acts as a BACK-UP for TESTING (to ensure proper numbering)
                 print(str(index)+ " - NOCAP")
-            if not nocap: # TOOD: DELETE LINE
+            if not nocap: 
                 print(str(index)+ " cap") 
             # Scale image to 800x800
             newsize = 800
@@ -317,7 +317,7 @@ def split_image(path, imgpath, imgid, scalefactor, rows, columns, rotation, circ
             print("---")
 
 def main(argv):
-    path = "" # ../../Lithium Fecundity/Replicate 1_s/5-1
+    path = "" 
     for i in range(1, len(sys.argv)):
         path += sys.argv[i] + " "
     path = path[0:len(path)-1]
