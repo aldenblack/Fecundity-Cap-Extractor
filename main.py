@@ -10,17 +10,8 @@ import sys
 global debug
 debug = False
 
-def edit_contrast(img, k=0.04):
-    image = np.copy(img) # is this even necessary?
-    for x in range(len(image)):
-        for y in range(len(image[0])):
-            for color in range(len(image[x][y])):
-                image[x][y][color] = 255 / (1 + np.e ** (-k * (image[x][y][color]-122)))
-    return image
-
 def edit_contrast_greyscale(img, k=0.04):
     image = np.copy(img) 
-    #print(image)
     for x in range(len(image)):
         for y in range(len(image[0])):
                 image[x][y] = 255 / (1 + np.e ** (-k * (image[x][y]-122)))
